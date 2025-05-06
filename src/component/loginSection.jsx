@@ -2,10 +2,11 @@ import React from 'react';
 import Animation from './Animation'; // Ensure this path is correct
 
 const LoginScreen = () => {
+
   return (
     <div className="min-h-screen flex items-center justify-center p-6 text-gray-800">
       <div className="w-full max-w-6xl flex flex-col md:flex-row rounded-2xl shadow-elegant overflow-hidden">
-        
+
         {/* Left side - Branding and Testimonials */}
         <div className="bg-pink-700 w-full md:w-5/12 bg-gradient-to-br from-brand-800 to-brand-950 p-8 md:p-12 flex flex-col justify-between text-white">
           <div>
@@ -41,6 +42,55 @@ const LoginScreen = () => {
             <h3 className="text-2xl md:text-3xl font-display font-medium mb-2">Welcome Back</h3>
             <p className="text-gray-600 mb-8">Sign in to continue your journey to love</p>
 
+            <label for="input-group-1" className="block text-gray-700 dark:text-gray-700 text-md md:text-md font-display font-medium mb-2">Your Email</label>
+            <div className="relative mb-6">
+              <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                  <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+                  <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+                </svg>
+              </div>
+              <input type="text" id="input-group-1" className="bg-white w-full flex ps-10 outline-none py-3 px-4 rounded-lg border border-gray-200 shadow-button mb-4 hover:bg-gray-50 transition-all" placeholder="example@mail.com" />
+            </div>
+
+            <label for="input-group-1" className="block text-gray-700 dark:text-gray-700 text-md md:text-md font-display font-medium mb-2">Enter OTP</label>
+            <div class="max-w-md mx-auto text-center rounded-xl ">
+                <div class="flex items-center justify-center gap-3">
+                  <input
+                    type="text"
+                    class="w-14 h-14 text-center text-2xl font-extrabold border-gray-700 text-slate-900 bg-slate-100 border border-transparent appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+                    pattern="\d*" maxlength="1" />
+                  <input
+                    type="text"
+                    class="w-14 h-14 text-center text-2xl font-extrabold border-gray-700 text-slate-900 bg-slate-100 border border-transparent appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+                    maxlength="1" />
+                  <input
+                    type="text"
+                    class="w-14 h-14 text-center text-2xl font-extrabold border-gray-700 text-slate-900 bg-slate-100 border border-transparent appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+                    maxlength="1" />
+                  <input
+                    type="text"
+                    class="w-14 h-14 text-center text-2xl font-extrabold border-gray-700 text-slate-900 bg-slate-100 border border-transparent appearance-none rounded p-4 outline-none focus:bg-white focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+                    maxlength="1" />
+                </div>  
+              <div class="text-sm text-slate-500 mt-4">Didn't receive code? <a class="font-medium text-indigo-500 hover:text-indigo-600" href="#0">Resend</a></div>
+            </div>
+
+            <button
+              id="googleLogin"
+              className="login-btn mt-4 shine flex items-center justify-center gap-3 py-3 px-4 rounded-lg border border-gray-200 shadow-button mb-4 hover:bg-gray-50 transition-all bg-pink-700 w-full bg-gradient-to-br from-brand-800 to-brand-950"
+            >
+              <span className="font-medium text-white">Generate OTP</span>
+            </button>
+
+
+            {/* OR Divider */}
+            <div className="relative flex items-center my-6">
+              <div className="flex-grow border-t border-gray-300"></div>
+              <span className="flex-shrink mx-4 text-gray-600 text-sm">or continue with</span>
+              <div className="flex-grow border-t border-gray-300"></div>
+            </div>
+
             {/* Google Button */}
             <button
               id="googleLogin"
@@ -63,71 +113,19 @@ const LoginScreen = () => {
               <span className="font-medium">Continue with Google</span>
             </button>
 
-            {/* OR Divider */}
-            <div className="relative flex items-center my-6">
-              <div className="flex-grow border-t border-gray-300"></div>
-              <span className="flex-shrink mx-4 text-gray-600 text-sm">or continue with</span>
-              <div className="flex-grow border-t border-gray-300"></div>
-            </div>
-
-            {/* Other login options */}
-            <div className="grid grid-cols-3 gap-3 mb-6">
-              {/* Facebook */}
-              <button className="login-btn flex justify-center items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50">
-                <svg className="w-5 h-5 text-[#1877F2]" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 
-                    12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 
-                    1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 
-                    0-1.956.925-1.956 1.874v2.25h3.328l-.532 
-                    3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                </svg>
-              </button>
-
-              {/* GitHub */}
-              <button className="login-btn flex justify-center items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50">
-                <svg className="w-5 h-5 text-black" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 
-                    8.502 11.24H16.17l-5.214-6.817L4.99 
-                    21.75H1.68l7.73-8.835L1.254 
-                    2.25H8.08l4.713 6.231zm-1.161 
-                    17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-              </button>
-
-              {/* LinkedIn */}
-              <button className="login-btn flex justify-center items-center p-3 border border-gray-200 rounded-lg hover:bg-gray-50">
-                <svg className="w-5 h-5 text-[#0A66C2]" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 
-                    0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 
-                    1.637-1.85 3.37-1.85 3.601 0 4.267 
-                    2.37 4.267 5.455v6.286zM5.337 
-                    7.433c-1.144 0-2.063-.926-2.063-2.065 
-                    0-1.138.92-2.063 2.063-2.063 1.14 
-                    0 2.064.925 2.064 2.063 0 
-                    1.139-.925 2.065-2.064 2.065zm1.782 
-                    13.019H3.555V9h3.564v11.452zM22.225 
-                    0H1.771C.792 0 0 .774 0 
-                    1.729v20.542C0 23.227.792 24 
-                    1.771 24h20.451C23.2 24 24 
-                    23.227 24 22.271V1.729C24 
-                    .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </button>
-            </div>
-
             {/* Terms and Create Account */}
             <div className="text-center">
               <p className="text-sm text-gray-600 mb-6">
-                By continuing, you agree to our 
-                <a href="#" className="text-brand-700 hover:text-brand-800 font-medium"> Terms of Service </a> and 
+                By continuing, you agree to our
+                <a href="#" className="text-brand-700 hover:text-brand-800 font-medium"> Terms of Service </a> and
                 <a href="#" className="text-brand-700 hover:text-brand-800 font-medium"> Privacy Policy</a>
               </p>
-              <div className="pt-4 border-t border-gray-200">
+              {/* <div className="pt-4 border-t border-gray-200">
                 <p className="text-sm text-gray-600">
-                  New to Amour? 
+                  New to Amour?
                   <a href="#" className="text-brand-700 hover:text-brand-800 font-medium"> Create an account</a>
                 </p>
-              </div>
+              </div> */}
             </div>
 
             {/* Security Footer */}
